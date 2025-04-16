@@ -1,0 +1,11 @@
+select CURRENT_TIMESTAMP
+
+SELECT CAST(GETDATE() AS DATE) AS current_date_;
+
+select GETDATE ( ),GETUTCDATE ( )
+
+select DAY(CURRENT_TIMESTAMP)
+select year(CURRENT_TIMESTAMP)
+select month(CURRENT_TIMESTAMP)
+
+select DAYofweek(CURRENT_TIMESTAMP)

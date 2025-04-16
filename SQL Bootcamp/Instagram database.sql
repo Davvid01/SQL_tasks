@@ -73,3 +73,4 @@ foreign key (followee_id) references users(id),
 primary key(follower_id, followee_id)
 )
 
+
