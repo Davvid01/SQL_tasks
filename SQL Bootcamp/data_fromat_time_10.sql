@@ -50,5 +50,25 @@ select datediff(hour,GETDATE() as time, '7:00:00')
 select getdate(), cast(cast(getdate() as date) as datetime)+ '3:00:00'
 select datediff(hour,GETDATE(), cast(cast(getdate() as date) as datetime)+ '7:00:00')
 
-select dateadd(year,-18, getdate())
+select year(dateadd(year,-18, getdate())) as year_maturity_legal
+
+select getdate() -- TIMESTAMP --it is just a format less space than datetime but only 1970-2038
+
+create table captions2(
+text varchar(150),
+created_at datetime default getdate(), --tak w kursie:timestamp default current_timestamp,
+updated_at datetime
+)
+
+--excercies
+select FORMAT(current_timestamp, 'curr_time MMM/dd/yyyy')
+
+create table tweets(
+content varchar(180),
+username varchar(50),
+created_at datetime default current_timestamp
+)
+--CHAR IS good for fixed strings which are the same in size. lenghth
+--varchar is generally more efficient
+
 

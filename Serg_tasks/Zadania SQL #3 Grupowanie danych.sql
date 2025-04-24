@@ -84,3 +84,22 @@ where dodatek is null or dodatek <1000
 
 group by id_stanowiska
 having sum(pensja)<30000
+
+--zad 14 na zajeciach
+select substring(nazwisko,1,1) as pierwsza_litera, count(substring(nazwisko,1,1)) from Pracownicy
+group by substring(nazwisko,1,1)
+
+--zad16
+select p.id_department, avg(pensja)
+from Departments d
+join Pracownicy p on p.id_department=d.id_department
+group by p.id_department
+
+select * from Positions
+
+--zad17
+select d.id_department, name, COUNT(pensja), sum(pensja)  from Departments d
+join Pracownicy p on p.id_department=d.id_department
+where pensja>8000
+group by d.id_department, name
+having MAX(pensja)>10000
