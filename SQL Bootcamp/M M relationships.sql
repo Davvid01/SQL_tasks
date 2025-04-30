@@ -94,3 +94,34 @@ group by first_name, last_name
 select title, rating, concat(first_name,' ', last_name) from series
 join reviews on reviews.series_id=series.id
 join reviewers on reviewers.id=reviews.reviewer_id
+
+create table customers (
+id int identity(1,1) primary key,
+first_name varchar(10),
+last_name (10),
+email varchar(10)
+foreign key 
+)
+create table orders (
+id identity(1,1) primary key,
+order_date date,
+amount float,
+customer_id,
+foreign key (customer_id) references customers(id)
+)
+
+alter table orders
+drop column amount
+
+alter column orders
+add column purchases
+
+
+create table reviews(
+id idenitity(1,1) primary key,
+rating decimal(2,1),
+series_id int,
+reviewer_id int,
+foreign key (reviewer_id) references reviewers(id),
+foreign key(series_id) references series(id)
+)
